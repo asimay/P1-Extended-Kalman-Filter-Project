@@ -95,7 +95,7 @@ RMSE screenshot as below:
 
 ![alt text][image4]
 
-####  5. Fusion both Radar and Lidar data, but tune a good Q process noise, I increase the noise_ax and noise_ay  up to 13, and got a  good result:
+####  5. Fusion both Radar and Lidar data, but tune a good Q process noise, I increase the noise_ax and noise_ay up to 13, under dataset 1 testing, and got a  good result:
 
 RMSE screenshot as below:
 
