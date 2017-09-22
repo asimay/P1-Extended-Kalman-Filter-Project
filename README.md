@@ -1,17 +1,29 @@
-# Extended Kalman Filter Project 
-Project Purpose:
-
-Utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
+## ** Extended Kalman Filter Project**
 
 ---
 
-## 1. Read the Radar and Lidar measurement data into program.
+The goals / steps of this project are the following:
+
+* Utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
+
+[//]: # (Image References)
+[image1]: ./images/1.png
+[image2]: ./images/onlyradar.png
+[image3]: ./images/onlylaser.png
+[image4]: ./images/dataset2test.png
+[image5]: ./images/noise13.png
+
+---
+
+### KF/EKF Process
+
+#### 1. Read the Radar and Lidar measurement data into program.
 
 This is provided in main.cpp file.
 
-## 2. Kalman Filter or Extended Kalman Filter Process:
+#### 2. Kalman Filter or Extended Kalman Filter Process:
 
-1. Lidar measurement module is linear, so we use Kalman Filter to handle the data.
+##### 1. Lidar measurement module is linear, so we use Kalman Filter to handle the data.
 
 2. Radar measurement module is nolinear, so we need to transform some nonlinear module or matrix to linear to handle the data, which is Extended Kalman Filter.
 
@@ -54,20 +66,32 @@ Above is for predict.
       y(1) = theta_offset - 2 * PI;
   }
 ```
-## Test Implementation:
+### Test Implementation:
 
-1. Fusion both Radar and Lidar data:
+#### 1. Fusion both Radar and Lidar data:
+
 RMSE screenshot as below:
 
+![alt text][image1]
 
-2. Fusion only Radar data:
+#### 2. Fusion only Radar data:
+
 RMSE screenshot as below:
 
+![alt text][image2]
 
-3. Fusion only Lidar data:
+#### 3. Fusion only Lidar data:
+
 RMSE screenshot as below:
 
+![alt text][image3]
 
-4. Fusion both Radar and Lidar data, but tune a good Q process noise, I increase the noise_ax and noise_ay  up to 13, and got good result:
+#### 4. Dataset 2 test with Lidar and Radar data:
+
+![alt text][image4]
+
+####  5. Fusion both Radar and Lidar data, but tune a good Q process noise, I increase the noise_ax and noise_ay  up to 13, and got good result:
+
 RMSE screenshot as below:
 
+![alt text][image5]
