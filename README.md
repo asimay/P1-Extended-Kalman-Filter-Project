@@ -1,7 +1,5 @@
 ## **Extended Kalman Filter Project**
 
----
-
 The goals / steps of this project are the following:
 
 * Utilize a kalman filter to estimate the state of a moving object of interest with noisy lidar and radar measurements. Passing the project requires obtaining RMSE values that are lower that the tolerance outlined in the project rubric. 
@@ -13,9 +11,13 @@ The goals / steps of this project are the following:
 [image4]: ./images/dataset2test.png
 [image5]: ./images/noise13.png
 
+Final result:
+
+![alt text][image1]
+
 ---
 
-### KF/EKF Process
+## KF/EKF Process
 
 ---
 
