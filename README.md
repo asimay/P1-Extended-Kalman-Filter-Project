@@ -15,7 +15,7 @@ This is provided in main.cpp file.
 
 2. Radar measurement module is nolinear, so we need to transform some nonlinear module or matrix to linear to handle the data, which is Extended Kalman Filter.
 
-3. Kalman Filter is "predict --> update --> predict --> update" loop to handle the data.
+3. Kalman Filter is `"predict --> update --> predict --> update"` loop to handle the data.
 
 4. Initializing the State Vector, use lidar measurement to initialize the state variable locations px, py, use the radar measurements ρ and ϕ to initialize the state variable locations px, py, vx, vy.
 
@@ -45,15 +45,15 @@ Above is for predict.
 
 6. Normalizing Angles:
 
+```
   float theta_offset = y(1);
-  // normalize theta
   if(theta_offset < -PI) {
       y(1) = theta_offset + 2 * PI;
   }
   else if (theta_offset > PI) {
       y(1) = theta_offset - 2 * PI;
   }
-
+```
 ## Test Implementation:
 
 1. Fusion both Radar and Lidar data:
