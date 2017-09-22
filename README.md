@@ -23,25 +23,25 @@ This is provided in main.cpp file.
 
 `y = z - H * x' or y = z - h(x);`
 
-S = H_ * P_ * H_.transpose() + R_;
+`S = H_ * P_ * H_.transpose() + R_;`
 
-K = P_ * H_.transpose() * S.inverse();`
+`K = P_ * H_.transpose() * S.inverse();`
 
 new estimate:
 
-`x_ = x_ + (K * y);
+`x_ = x_ + (K * y);`
 
-P_ = (I - K * H_) * P_;`
+`P_ = (I - K * H_) * P_;`
 
-This is for measurement update. For EKF, I calculated the Hj(Jacobian Matrix) to do measurement update.
+Above is for measurement update. For EKF, I calculated the `Hj`(Jacobian Matrix) to do measurement update.
 
 predict the state:
 
-x_ = F_ * x_ ;
+`x_ = F_ * x_ ;`
 
-P_ = F_ * P_ * F_.transpose() + Q_;
+`P_ = F_ * P_ * F_.transpose() + Q_;`
 
-This is for predict.
+Above is for predict.
 
 6. Normalizing Angles:
 
