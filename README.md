@@ -5,29 +5,33 @@ Utilize a kalman filter to estimate the state of a moving object of interest wit
 
 ---
 
-## Read the Radar and Lidar measurement data into program.
+## 1. Read the Radar and Lidar measurement data into program.
 
 This is provided in main.cpp file.
 
-## Kalman Filter or Extended Kalman Filter Process:
+## 2. Kalman Filter or Extended Kalman Filter Process:
 
 1. Lidar measurement module is linear, so we use Kalman Filter to handle the data.
+
 2. Radar measurement module is nolinear, so we need to transform some nonlinear module or matrix to linear to handle the data, which is Extended Kalman Filter.
+
 3. Kalman Filter is "predict --> update --> predict --> update" loop to handle the data.
-4. Initializing the State Vector, use lidar measurement to initialize the state variable locations px, py, use the radar measurements ρ and ϕ to initialize the state variable locations px, p​y, vx, vy.
+
+4. Initializing the State Vector, use lidar measurement to initialize the state variable locations px, py, use the radar measurements ρ and ϕ to initialize the state variable locations px, py, vx, vy.
+
 5. Calculating KF/EKF equations:
 
-y = z - H * x' or y = z - h(x);
+`y = z - H * x' or y = z - h(x);`
 
 S = H_ * P_ * H_.transpose() + R_;
 
-K = P_ * H_.transpose() * S.inverse();
+K = P_ * H_.transpose() * S.inverse();`
 
 new estimate:
 
-x_ = x_ + (K * y);
+`x_ = x_ + (K * y);
 
-P_ = (I - K * H_) * P_;
+P_ = (I - K * H_) * P_;`
 
 This is for measurement update. For EKF, I calculated the Hj(Jacobian Matrix) to do measurement update.
 
