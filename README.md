@@ -19,7 +19,6 @@ Final result:
 
 ## KF/EKF Process
 
----
 
 #### 1. Read the Radar and Lidar measurement data into program.
 
@@ -71,9 +70,8 @@ Above is for predict.
   }
 ```
 
-### Test Implementation:
+## Test Implementation:
 
----
 
 #### 1. Fusion both Radar and Lidar data:
 
